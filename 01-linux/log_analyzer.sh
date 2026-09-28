@@ -1,6 +1,7 @@
 #!/bin/bash
 
-LOG_FILE="dummy_access.log"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+LOG_FILE="${SCRIPT_DIR}/dummy_access.log"
 
 echo "=========================================="
 echo "          NGINX LOG ANALYZER              "
