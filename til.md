@@ -1,12 +1,10 @@
-# Today I Learned (TIL) - DevOps Journey
+# Today I Learned (TIL) - DevOps Master Plan
 
-## 28 September 2026 - Setup Environment, Text Processing & Networking
-- Berhasil mengaktifkan `systemd` sebagai PID 1 di WSL2 openSUSE Leap 16.0.
-- Mengatur alokasi resource WSL2 via `.wslconfig` (RAM 10GB, CPU 8 Cores, Swap 4GB).
-- Troubleshooting `audit-rules.service` degraded dengan `systemctl mask`.
-- Menyetel default user `underground` di `/etc/wsl.conf`.
-- Konfigurasi SSH Key Ed25519 dan integrasi autentikasi dengan akun GitHub `mrunhypedrip`.
-- Menguasai pemrosesan log Nginx menggunakan kombinasi `grep`, `awk`, `sed`, `sort`, dan `uniq`.
-- Membuat skrip Bash otomatisasi analisis log (`log_analyzer.sh`).
-- Menganalisis *listening ports* (`ss`) dan *DNS resolution* (`dig`) serta pengujian HTTP header (`curl`).
-- Membuat skrip validasi konektivitas jaringan (`net_checker.sh`).
+## Summary Progression
+- **00-Setup:** WSL2 openSUSE Leap 16.0, `systemd` PID 1, `.wslconfig`, SSH Key GitHub authentication.
+- **01-Linux:** Navigasi FHS, *permission management*, pemrosesan log Nginx via `grep`, `awk`, `sed`, `sort`, `uniq`.
+- **02-Networking:** Inspection *listening sockets* (`ss`), HTTP headers (`curl`), DNS Resolution (`dig`), skrip validation (`net_checker.sh`).
+- **03-Docker:** *Containerization*, `Dockerfile`, `docker-compose.yml`, multi-container orchestration.
+- **04-CI/CD & IaC:** GitHub Actions Workflow (`ci.yml`), Terraform state & resource management (`main.tf`).
+- **05-Kubernetes:** Orchestration manifests (`Deployment`, `Service`), replica scaling.
+- **06-Observability & Incidents:** Prometheus config, metrics monitoring, serta template *Incident Post-Mortem Report*.

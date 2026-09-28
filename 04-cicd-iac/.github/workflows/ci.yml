@@ -1,0 +1,24 @@
+name: DevOps CI Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  lint-and-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: ShellCheck Bash Scripts
+        run: |
+          sudo apt-get install -y shellcheck
+          shellcheck 01-linux/log_analyzer.sh 02-networking/net_checker.sh || true
+
+      - name: Test Docker Build
+        run: |
+          cd 03-docker
+          docker build -t test-app:ci .
