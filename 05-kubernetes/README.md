@@ -1,10 +1,19 @@
-# Minggu 5: Kubernetes Orchestration (kind / k3d)
+# Modul 05: Kubernetes Production Orchestration Manifests
 
-## Concept Overview
-- **Deployment:** Mengatur *desired state*, *scaling*, dan *rolling updates* untuk Pods.
-- **Service:** Menyediakan IP stabil dan *load balancing* internal antar-Pod.
+## 1. Konsep & Industri Utility
+Orkestrasi kontainer dengan fitur auto-scaling (HPA), resource limits, liveness probe, dan load balancing internal.
 
-## Practice Commands (dengan kind/k3d/minikube)
-- Apply Manifest: `kubectl apply -f deployment.yaml`
-- Check Resources: `kubectl get pods,svc,deploy`
-- Delete Resources: `kubectl delete -f deployment.yaml`
+## 2. Diagram Kubernetes Architecture (Mermaid)
+```mermaid
+graph TD
+    SVC[Service ClusterIP] --> Pod1[Pod API 1]
+    SVC --> Pod2[Pod API 8]
+    SVC --> Pod3[Pod API 3]
+    HPA[Horizontal Pod Autoscaler] -->|CPU Target 70%< SVC
+```JEOC
+
+cat << 'EOD' > 06-observability/README.md
+# Modul 06: Observability & Metrics Scraping
+
+## 1. Konsep & Industri Utility
+Pengumpulan metrik performa aplikasi dan infrastruktur secara real-time menggunakan Prometheus.

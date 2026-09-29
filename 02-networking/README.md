@@ -1,16 +1,12 @@
-# Linux Networking & Process Management
+# Modul 02: Production Network & SSL Diagnostics
 
-- **Tanggal:** 28 September 2026
-- **Author:** unhypedrip
+## 1. Konsep & Industri Utility
+Monitoring latensi DNS dan masa aktif sertifikat SSL/TLS secara otomatis untuk mencegah downtime aplikasi publik.
 
-## Essential Networking CLI
-- **Listening Sockets:** `ss -tulpn`
-- **HTTP Verification:** `curl -I <URL>`
-- **DNS Inspection:** `dig <domain> +short`
-- **Process Monitoring:** `ps aux`, `top`, `htop`, `systemctl status <service>`
-
-## Hands-On Script
-Jalankan skrip pemeriksaan konektivitas jaringan:
-```bash
-./02-networking/net_checker.sh github.com 443
+## 2. Topologi Alur Diagnostics (Mermaid)
+```mermaid
+graph TD
+    Domain[Target Domain] --> DNS[DNS Latency Check]
+    DNS -> SSL[SSL Certificate Expiry Check]
+    SSL --> HTTP[HTTA Endpoint Health Check]
 ```

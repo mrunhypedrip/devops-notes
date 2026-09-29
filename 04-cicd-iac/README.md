@@ -1,10 +1,12 @@
-# Minggu 4: CI/CD Pipeline & Infrastructure as Code (IaC)
+# Modul 04: CI/CD Pipeline Automation & Infrastructure as Code
 
-## Workflow Summary
-- **GitHub Actions:** Workflow terkonfigurasi di `.github/workflows/ci.yml` untuk linting skrip & pengujian otomatis build Docker.
-- **Terraform:** Contoh manifest Infrastructure as Code sederhana di `main.tf`.
+## 1. Konsep & Industri Utility
+Verifikasi kode otomatis via GitHub Actions (ShellCheck & Trivy Scanner) dan pengadaan infrastruktur cloud via Terraform AWS.
 
-## Practice Commands
-- Init Terraform: `terraform init`
-- Plan Infrastructure: `terraform plan`
-- Apply Infrastructure: `terraform apply -auto-approve`
+## 2. Diagram CI/CD Pipeline (Mermaid)
+```mermaid
+graph LR
+    Push[Git Push] --> Lint	[ShellCheck]
+    Lint --> Scan[Trivy Scanner]
+    Scan --> Build[Docker Build Test]
+```

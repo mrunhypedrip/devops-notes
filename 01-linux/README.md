@@ -1,15 +1,17 @@
-# Linux Navigation, Permissions, & Text Manipulation
+# Modul 01: Linux Fundamentals & Advanced Log Parsing
 
-- **Tanggal:** 28 September 2026
-- **Author:** unhypedrip
+## 1. Konsep & Industri Utility
+Log parsing otomatis digunakan untuk memantau error rate, deteksi brute-force attack, serta pembuatan JSON report terstruktur untuk -integrasi alert system.
 
-## Core Commands Checklist
-- **Text Filtering:** `grep`, `egrep`
-- **Text Processing:** `awk`, `cut`, `sort`, `uniq`
-- **Stream Editing:** `sed`
-- **Permissions:** `chmod`, `chown`
+## 2. Topologi Alur Log Engine (Mermaid)
+```mermaid
+graph LR
+    Log[Access Log] --> Engine[advanced_log_parser.sh]
+    Engine --> Stats[Kalkulasi Error Rate]
+    Stats --> Report[Export JSON Report]
+```J
 
-## Hands-On Script
-Jalankan skrip analisis log otomatis dengan perintah:
-```bash
-./log_analyzer.sh
+## 3. Komponen Utama
+- `advanced_log_parser.sh` : Script parsing log ke JSON report.
+- `CHEATSHEET_DEVOPS_LINUX.md` : Panduan 12 kategori command vital Linux.
+- `hands_on_practice.sh` : Script latihan profiling sistem.

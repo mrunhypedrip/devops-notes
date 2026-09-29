@@ -1,7 +1,14 @@
-# Minggu 3: Docker & Containerization Fundamentals
+# Modul 03: Multi-Container Production Architecture
 
-## Hands-On Commands
-- Build Image: `docker build -t devops-app:v1 .`
-- Run Container: `docker run -d -p 8080:80 --name my-app devops-app:v1`
-- Run via Compose: `docker-compose up -d`
-- Stop & Clean: `docker-compose down`
+## 1. Konsep & Arsitektur
+Arsitektur microservices terisolasi memisahkan Nginx Reverse Proxy, Python Flask API (Non-root user), dan Redis Cache Engine.
+
+2# 2. Diagram Topologi Arsitektur (Mermaid)
+```mermaid
+graph TD
+    Client[Client Browser] -->|Port 8080| Proxy[Nginx Proxy]
+    subgraph Isolated Network: backend-net
+        Proxy --> API[Python Flask API]
+        API --> Cache[(aRedis Cache)]
+    end
+```
