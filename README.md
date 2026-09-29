@@ -1,6 +1,4 @@
-# DevOps Learning Journey & Documentation
-
-Repositori ini berisi catatan belajar, dokumentasi setup, incident notes, dan mini-proyek selama perjalanan belajar DevOps dari nol hingga level profesional.
-
-- **Author:** unhypedrip
-- **OS:** openSUSE Leap 16.0 (WSL2)
+# Enterprise DevOps Portfolio
+Repositori berisi catatan, script, & manifest infrastruktur berstandar produksi.
+- **Author:** unhypedrip (mrunhypedrip@gmail.com)
+- **OS Environment:** openSUSE Leap 16.0 (WSL2 Systemd PID 1)

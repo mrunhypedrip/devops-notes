@@ -1,13 +1,6 @@
 global:
   scrape_interval: 10s
-  evaluation_interval: 10s
-
 scrape_configs:
-  - job_name: 'python-api-cluster'
-    metrics_path: '/metrics'
+  - job_name: 'python-api'
     static_configs:
-      - targets: ['api.production.svc.cluster.local:5000']
-
-  - job_name: 'node-exporter'
-    static_configs:
-      - targets: ['localhost:9100']
+      - targets: ['localhost:5000']

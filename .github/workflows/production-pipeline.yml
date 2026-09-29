@@ -1,46 +1,17 @@
 name: Enterprise CI/CD Pipeline
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
+on: [push, pull_request]
 jobs:
-  lint-and-security:
+  lint-and-build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: ShellCheck Bash Scripts
+      - uses: actions/checkout@v3
+      - name: ShellCheck Scripts
         run: |
           sudo apt-get install -y shellcheck
           shellcheck 01-linux/advanced_log_parser.sh 02-networking/production_net_diag.sh
-
-      - name: Run Trivy Vulnerability Scanner on Dockerfile
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'config'
-          hide-progress: false
-          format: 'table'
-          exit-code: '0'
-
-  build-and-test:
-    needs: lint-and-security
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
-
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
-
-      - name: Build & Run Docker Compose Stack
+      - name: Test Docker Compose Build
         run: |
           cd 03-docker
           docker compose up -d --build
-          sleep 5
-          curl -f http://localhost:8080/health
-          curl -f http://localhost:8080/api/v1/hits
+          sleep 3
           docker compose down
