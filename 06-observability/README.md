@@ -1,10 +1,7 @@
-# Minggu 6: Observability (Metrics, Logs, Traces)
 
-## Core Stack
-- **Prometheus:** Metrics collector & time-series database.
-- **Grafana:** Dashboard visualisasi kustom.
-- **Zabbix:** Monitoring infrastruktur & *alerting engine*.
+Modul 06: Observability & Metrics Scraping
+1. Konsep & Industri Utility
+Pengumpulkan metrik performa aplikasi dan infrastruktur secara real-time menggunakan Prometheus.
 
-## Metrics Key
-- CPU Usage, RAM Pressure, Disk I/O, Network Throughput.
-- HTTP Request Rate, 5xx Error Ratio, Latency (p95/p99).
+2. Komponen Utama
+prometheus.yml : Prometheus configuration file.
